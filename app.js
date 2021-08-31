@@ -1,10 +1,9 @@
 const http = require('http');
 const express = require('express');
-//require('dotenv').config();
+require('dotenv').config();
 
-//const port = process.env.PORT;
-//const apikey = process.env.API_KEY;
-const apikey = require('./keys.js')
+const port = process.env.PORT;
+const apikey = process.env.API_KEY;
 
 const app = express();
 
@@ -17,7 +16,7 @@ app.get('/',(req, res)=>{
 
 app.post('/check-weather',(req, res)=>{
     var pincode = req.body.pincode;
-    console.log(pincode);
+    //console.log(pincode);
     var url= `https://api.openweathermap.org/data/2.5/weather?zip=${pincode},in&units=metric&appid=`+ apikey;
     var request = require('request');
     request(url,function(err, r, body){
@@ -27,4 +26,4 @@ app.post('/check-weather',(req, res)=>{
     });
 })
 
-app.listen(8081);
+app.listen(port);
