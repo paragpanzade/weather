@@ -1,0 +1,29 @@
+.content{
+    margin-left: 20px;
+  } 
+
+#main { 
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#check-weather {
+    width: 50%;
+    height: fit-content;
+    float: left;
+}
+
+#display-weather  {
+    width: 50%;
+    height: fit-content;
+    margin-left: 200px;
+}
+
+footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    background:rgb(172, 195, 206);
+    text-align: center;
+ }

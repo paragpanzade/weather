@@ -3,7 +3,7 @@
     <body>
         <%- include('./partials/nav.ejs') %>
         <div class="main">
-            <div class="check-weather content">
+            <div class="check-weather content" id="check-weather">
                 <form action="/check-weather" method="POST"> 
                     <label for="pincode">Pincode</label>
                     <input type="text" name="pincode" id="pincode" required>
