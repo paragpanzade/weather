@@ -1,0 +1,25 @@
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="main">
+            <div class="check-weather content">
+                <form action="/check-weather" method="POST"> 
+                    <label for="pincode">Pincode</label>
+                    <input type="text" name="pincode" id="pincode" required>
+                    <button type="submit">Check</button>
+                </form>
+            </div>
+            <div class="display-weather content">
+                <%if(locals.data){ %>
+                    <h2><%= data.name %>, <%= data.sys['country'] %></h2>
+                    <div class="content">
+                        <p>Temperature: <%= data.main['temp'] %></p>
+                    </div>
+                <%}%>
+            </div>
+        </div>
+        
+        <%- include('./partials/footer.ejs') %>
+    </body>
+</html>
