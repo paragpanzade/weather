@@ -25,8 +25,8 @@ app.get('/check-weather/pincode',(req, res)=>{
 
 app.post('/check-weather',(req, res)=>{
     var pincode = req.body.pincode;
-    //console.log(pincode);
-    var url= `https://api.openweathermap.org/data/2.5/weather?zip=${pincode},in&units=metric&appid=`+ apikey;
+    var country = req.body.country;
+    var url= `https://api.openweathermap.org/data/2.5/weather?zip=${pincode},${country}&units=metric&appid=`+ apikey;
     var request = require('request');
     request(url,function(err, r, body){
         const data = JSON.parse(body);

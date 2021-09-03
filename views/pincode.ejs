@@ -6,7 +6,14 @@
             <div class="check-weather content" id="check-weather">
                 <form action="/check-weather" method="POST"> 
                     <label for="pincode">Pincode</label>
-                    <input type="text" name="pincode" id="pincode" required>
+                    <input type="text" name="pincode" id="pincode" required><br>
+                    <label for="country">Choose your country:</label>
+                    <select name="country" id="country">
+                        <option value="null">Select</option>
+                        <option value="in">India</option>
+                        <option value="us">United States of America</option>
+                        <option value="au">Australia</option>
+                    </select><br>
                     <button type="submit">Check</button>
                 </form>
             </div>
