@@ -23,15 +23,35 @@ app.get('/check-weather/pincode',(req, res)=>{
     res.render('pincode', {title: 'Pincode'})
 })
 
+app.get('/check-weather/city',(req, res)=>{
+    res.render('city', {title: 'City'})
+})
+
 app.post('/check-weather',(req, res)=>{
-    var pincode = req.body.pincode;
-    var country = req.body.country;
-    var url= `https://api.openweathermap.org/data/2.5/weather?zip=${pincode},${country}&units=metric&appid=`+ apikey;
+    var wmethod = req.body.wm;
+    var url = ""; 
+    var rpage = "";
+    switch(wmethod)
+    {
+        case "city":
+            var city = req.body.city;
+            rpage = "city";
+            url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=` + apikey;
+            break;
+        
+        case "pincode":
+            var pincode = req.body.pincode;
+            var country = req.body.country;
+            rpage = "pincode";
+            url= `https://api.openweathermap.org/data/2.5/weather?zip=${pincode},${country}&units=metric&appid=`+ apikey;
+            break;
+    }
+
     var request = require('request');
     request(url,function(err, r, body){
         const data = JSON.parse(body);
         //console.log(body);
-        res.render('pincode',{title: 'Weather Details', data});
+        res.render(rpage,{title: 'Weather Details', data});
     });
 })
 

@@ -5,6 +5,7 @@
         <div class="main">
             <div class="check-weather content" id="check-weather">
                 <form action="/check-weather" method="POST"> 
+                    <input type="hidden" id="wm" name="wm" value="pincode">
                     <label for="pincode">Pincode</label>
                     <input type="text" name="pincode" id="pincode" required><br>
                     <label for="country">Choose your country:</label>
