@@ -9,6 +9,7 @@
   "author": "aditipolkam",
   "license": "ISC",
   "dependencies": {
+    "country-state-picker": "^1.1.5",
     "date-and-time": "^2.0.0",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
