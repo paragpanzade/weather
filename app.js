@@ -41,7 +41,7 @@ app.post('/check-weather',(req, res)=>{
         
         case "pincode":
             var pincode = req.body.pincode;
-            var country = req.body.country;
+            var country = req.body.countries;
             rpage = "pincode";
             url= `https://api.openweathermap.org/data/2.5/weather?zip=${pincode},${country}&units=metric&appid=`+ apikey;
             break;
