@@ -6,8 +6,8 @@
         <div class="check-weather content" id="check-weather">
             <form action="/check-weather" method="POST"> 
                 <input type="hidden" id="wm" name="wm" value="city">
-                <label for="city">City</label>
-                <input type="text" name="city" id="city" required><br>
+                Country: <select name="countries" id="countries"></select><br>
+                City: <input type="text" name="city" id="city" required><br>
                 <button type="submit">Check</button>
             </form>
         </div>
@@ -24,5 +24,6 @@
         </div>
     </div>
         <%- include('./partials/footer.ejs') %>
+        <script src="/city.js"></script>
     </body>
 </html>

@@ -35,8 +35,9 @@ app.post('/check-weather',(req, res)=>{
     {
         case "city":
             var city = req.body.city;
+            var country = req.body.countries;
             rpage = "city";
-            url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=` + apikey;
+            url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=` + apikey;
             break;
         
         case "pincode":
